@@ -4,11 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Where am I? | Geolocator and Weather Application | Current Location Page">
-    <title>Where Am I?</title>
+    <title>Where Am I? | Current Location</title>
 </head>
 <body>
-    <main>
-        
+    <header class="divider" id="main-header">
+        <a href="../index.html"><img src="../images/placeholder75x75.webp" alt="FILLER ALT"></a>
+        <h1>Where Am I?</h1>
+        <ul class="headerUL">
+            <li class="tile headerLI"><a href="../current_location/index.html">Current Location</a></li>
+            <li class="tile headerLI"><a href="../real_time_location/index.html">Real Time Location</a></li>
+            <li class="tile headerLI"><a href="../weather/index.html">Weather</a></li>
+            <li class="tile headerLI"><a href="../saved_data/index.html">Saved Data</a></li>
+        </ul>
+    </header>
+
+    <main class="staticLocationMain">
+        <h2>Current Location</h2>
+        <button id="staticLocationBtn">Find My Location</button>
+        <hr>
+
+        <div class="staticLocationBox">
+            <section>
+                <ul class="staticLocationUL">
+                    <li class="tile staticLocationLI">Latitude: <span id="staticLatitude">FILLER LATITUDE</span></li>
+                    <li class="tile staticLocationLI">Longitude: <span id="staticLongitude">FILLER LONGITUDE</span></li>
+                    <li class="tile staticLocationLI" id="staticLocation">FILLER LOCATION</li>
+                    <li class="tile staticLocationLI" id="staticTime">FILLER TIME</li>
+                </ul>
+            </section>
+
+            <section>
+                <img src="../images/placeholder75x75.webp" alt="Link to a Map | FILLER ALT">
+            </section>
+
+            <button class="saveDataBtn">Save This Data</button>
+
+        </div>
     </main>
 </body>
 </html>
