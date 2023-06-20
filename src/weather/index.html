@@ -4,11 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Where am I? | Geolocator and Weather Application | Weather Page">
-    <title>Where Am I?</title>
+    <title>Where Am I? | Weather</title>
 </head>
 <body>
-    <main>
-        
+    <header class="divider" id="main-header">
+        <a href="../index.html"><img src="../images/placeholder75x75.webp" alt="FILLER ALT"></a>
+        <h1>Where Am I?</h1>
+        <ul class="headerUL">
+            <li class="tile headerLI"><a href="../current_location/index.html">Current Location</a></li>
+            <li class="tile headerLI"><a href="../real_time_location/index.html">Real Time Location</a></li>
+            <li class="tile headerLI"><a href="../weather/index.html">Weather</a></li>
+            <li class="tile headerLI"><a href="../saved_data/index.html">Saved Data</a></li>
+        </ul>
+    </header>
+
+    <main class="weatherMain">
+        <h2>Weather</h2>
+        <button id="weatherBtn">Find My Weather</button>
+        <hr>
+        <div>
+            <section class="weatherDataBox">
+                <ul class="weatherDataUL">
+                    <li class="tile weatherDataLI">
+                        <img src="../images/placeholder75x75.webp" alt="FILLER ALT" id="weatherImg">
+                    </li>
+                    <li class="tile weatherDataLI" id="weatherCity">FILLER CITY</li>
+                    <li class="tile weatherDataLI" id="weatherTemp">FILLER TEMP</li>
+                    <li class="tile weatherDataLI" id="weatherType">FILLER TYPE</li>
+                    <li class="tile weatherDataLI">High: <span id="weatherTempHigh">FILLER</span> | Low: <span id="weatherTempLow">FILLER</span></li>
+                </ul>
+            </section>
+
+            <section class="weatherDataBox">
+                <ul class="weatherDataUL">
+                    <li class="tile weatherDataLI">Wind: <span id="weatherWind">FILLER</span></li>
+                    <li class="tile weatherDataLI">Humidity: <span id="weatherHumidity">FILLER</span></li>
+                    <li class="tile weatherDataLI">Sunrise: <span id="weatherSunrise">FILLER</span></li>
+                    <li class="tile weatherDataLI">Sunset: <span id="weatherSunset">FILLER</span></li>
+                    <li class="tile weatherDataLI" id="weatherTime">FILLER TIME</li>
+                </ul>
+            </section>
+
+            <button class="saveDataBtn">Save This Data</button>
+        </div>
     </main>
 </body>
 </html>

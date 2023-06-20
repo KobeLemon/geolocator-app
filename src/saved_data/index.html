@@ -4,11 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Where am I? | Geolocator and Weather Application | Saved Data Page">
-    <title>Where Am I?</title>
+    <title>Where Am I? | Saved Data</title>
 </head>
 <body>
-    <main>
-        
+    <header class="divider" id="main-header">
+        <a href="../index.html"><img src="../images/placeholder75x75.webp" alt="FILLER ALT"></a>
+        <h1>Where Am I?</h1>
+        <ul class="headerUL">
+            <li class="tile headerLI"><a href="../current_location/index.html">Current Location</a></li>
+            <li class="tile headerLI"><a href="../real_time_location/index.html">Real Time Location</a></li>
+            <li class="tile headerLI"><a href="../weather/index.html">Weather</a></li>
+            <li class="tile headerLI"><a href="../saved_data/index.html">Saved Data</a></li>
+        </ul>
+    </header>
+
+    <main class="savedDataMain">
+        <!-- These ul's are empty by default and they are filled via JavaScript -->
+        <h2>Saved Data</h2>
+        <fieldset class="tile savedDataBox">
+            <legend>Current Location</legend>
+            <ul class="savedDataUl">
+            </ul>
+        </fieldset>
+        <fieldset class="tile savedDataBox">
+            <legend>Real Time Location</legend>
+            <ul class="savedDataUl"></ul>
+        </fieldset>
+        <fieldset class="tile savedDataBox">
+            <legend>Weather</legend>
+            <ul class="savedDataUl"></ul>
+        </fieldset>
     </main>
 </body>
 </html>
