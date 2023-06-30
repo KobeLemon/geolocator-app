@@ -1,0 +1,117 @@
+/* Start of Small View Styling */
+    
+/* Start of Small General Styling -- This is for styling used across multiple pages */
+body {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 1rem;
+}
+.logoBox {
+    display: flex;
+    gap: 2rem;
+}
+
+#headerULClosed {
+    display: none;
+    /* MODIFY THIS TO BE HAMBURGER MENU LIKE BOUNTIFUL FOODS */
+}
+
+#headerULOpen,
+#headerULOpen li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0rem;
+    gap: 2rem;
+}
+
+#headerULOpen li a {
+    height: fit-content;
+}
+/* End of Small General Styling */
+
+/* Start of Small Home Page Styling */
+.mainPageUL {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-items: center;
+    column-gap: 3rem;
+    /* background-color: rgb(123, 55, 0); */
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.mainPageUL a {
+    display: block;
+    width: fit-content;
+    margin-bottom: 2rem;
+    text-decoration: none;
+}
+
+.mainPageLI {
+    list-style-type: none;
+    display: block;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+}
+
+.mainPageLI img {
+    width: 125px;
+}
+
+/* End of Small Home Page Styling */
+
+/* Start of Small Current Location Page Styling */
+
+/* End of Small Current Location Page Styling */
+
+/* Start of Small Real Time Location Page Styling */
+
+/* End of Small Real Time Location Page Styling */
+
+/* Start of Small Weather Page Styling */
+
+/* End of Small Weather Page Styling */
+
+/* Start of Small Saved Data Page Styling */
+
+/* End of Small Saved Data Page Styling */
+
+/* End of Small View Styling */
+
+
+/* Start of Medium/Large View Styling */
+@media only screen and (min-width: 715px) {
+/* Start of Medium/Large Home Page Styling */
+
+/* End of Medium/Large Home Page Styling */
+
+/* Start of Medium/Large Current Location Page Styling */
+
+/* End of Medium/Large Current Location Page Styling */
+
+/* Start of Medium/Large Real Time Location Page Styling */
+
+/* End of Medium/Large Real Time Location Page Styling */
+
+/* Start of Medium/Large Weather Page Styling */
+
+/* End of Medium/Large Weather Page Styling */
+
+/* Start of Medium/Large Saved Data Page Styling */
+
+/* End of Medium/Large Saved Data Page Styling */
+}
+/* End of Medium/Large View Styling */
