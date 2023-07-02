@@ -3,36 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kobe Lemon">
     <meta name="description" content="Where am I? | Geolocator and Weather Application | Saved Data Page">
     <title>Where Am I? | Saved Data</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/normalize.css">
 </head>
 <body>
     <header class="divider" id="main-header">
-        <a href="../index.html"><img src="../images/placeholder75x75.webp" alt="FILLER ALT"></a>
-        <h1>Where Am I?</h1>
-        <ul class="headerUL">
-            <li class="tile headerLI"><a href="../current_location/index.html">Current Location</a></li>
-            <li class="tile headerLI"><a href="../real_time_location/index.html">Real Time Location</a></li>
-            <li class="tile headerLI"><a href="../weather/index.html">Weather</a></li>
-            <li class="tile headerLI"><a href="../saved_data/index.html">Saved Data</a></li>
+        <a href="/src/index.html" class="logoBox">
+            <img src="/src/images/placeholder100x100.png" alt="FILLER ALT">
+            <h1>Where Am I? - Geolocator & Weather</h1>
+        </a>
+        <ul id="headerULOpen">
+        <!-- MODIFY THIS TO BE HAMBURGER MENU LIKE BOUNTIFUL FOODS -->
+        <!-- <ul id="headerULClosed">     -->
+            <li><a href="/src/index.html">Home</a></li>
+            <li><a href="/src/current_location/index.html">Current Location</a></li>
+            <li><a href="/src/real_time_location/index.html">Real Time Location</a></li>
+            <li><a href="/src/weather/index.html">Weather</a></li>
+            <li><a href="/src/saved_data/index.html">Saved Data</a></li>
         </ul>
     </header>
 
-    <main class="savedDataMain">
+    <main class="contentMain savedDataMain">
         <!-- These ul's are empty by default and they are filled via JavaScript -->
-        <h2>Saved Data</h2>
-        <fieldset class="tile savedDataBox">
+        <div class="titleBox">
+            <h2>Saved Data</h2>
+            <hr>
+        </div>
+        <fieldset class="savedDataBox">
             <legend>Current Location</legend>
-            <ul class="savedDataUl">
+            <ul class="savedDataUL">
+                <p class="noData">No Current Location Data Saved!</p>
+                <!-- <button id="showMore">Show More</button> -->
             </ul>
         </fieldset>
-        <fieldset class="tile savedDataBox">
+        <fieldset class="savedDataBox">
             <legend>Real Time Location</legend>
-            <ul class="savedDataUl"></ul>
+            <ul class="savedDataUL">
+                <p class="noData">No Real Time Location Data Saved!</p>
+                <!-- <button id="showMore">Show More</button> -->
+            </ul>
         </fieldset>
-        <fieldset class="tile savedDataBox">
+        <fieldset class="savedDataBox">
             <legend>Weather</legend>
-            <ul class="savedDataUl"></ul>
+            <ul class="savedDataUL">
+                <a href="data_render.html"><li>06/15/2023 | 10:35 AM MST | Ogden</li></a>
+                <a href="data_render.html"><li>06/15/2023 | 10:35 AM MST | Ogden</li></a>
+                <a href="data_render.html"><li>06/15/2023 | 10:35 AM MST | Salt Lake City</li></a>
+                <a href="data_render.html"><li>06/15/2023 | 10:35 AM MST | Ogden</li></a>
+                <a href="data_render.html"><li>06/15/2023 | 10:35 AM MST | Ogden</li></a>
+                <a href="data_render.html"><li>06/15/2023 | 10:35 AM MST | Salt Lake City</li></a>
+                <a href="data_render.html"><li>06/15/2023 | 10:35 AM MST | Ogden</li></a>
+                <a href="data_render.html"><li>06/15/2023 | 10:35 AM MST | Ogden</li></a>
+                <a href="data_render.html"><li>06/15/2023 | 10:35 AM MST | Salt Lake City</li></a>
+                <!-- <li class="noData">No Weather Data Saved!</li> -->
+                <!-- <button id="showMore">Show More</button> -->
+            </ul>
         </fieldset>
     </main>
 </body>

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Kobe Lemon">
-    <meta name="description" content="Where am I? | Geolocator and Weather Application | Real Time Location Page">
-    <title>Where Am I? | Real Time Location</title>
+    <meta name="description" content="Where am I? | Geolocator and Weather Application | Saved Data Render Page">
+    <title>Where Am I? | Saved Data Render</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/normalize.css">
 </head>
@@ -27,29 +27,22 @@
     </header>
 
     <main class="contentMain">
-        <div class="titleBox">
-            <h2>Real Time Location</h2>
-            <button id="findInfoBtn">Find My Location</button>
-            <hr>
-        </div>
+            <div class="titleBox">
+                <h2>Current Location - Saved</h2>
+                <hr>
+            </div>
 
         <div class="contentBox">
             <ul class="contentUL">
-                <li class="contentLI">Latitude: <span id="realTimeLatitude">FILLER</span></li>
-                <li class="contentLI">Longitude: <span id="realTimeLongitude">FILLER</span></li>
-                <li class="contentLI"><span id="realTimeHeading">Heading: </span>FILLER</li>
-                <li class="contentLI"><span id="realTimeSpeed">Speed: </span>FILLER</li>
-                <li class="contentLI" id="realTimeLocation">FILLER LOCATION</li>
-                <li class="contentLI" id="realTimeTime">FILLER TIME</li>
+                <li class="contentLI">Latitude: <span id="staticLatitude">FILLER</span></li>
+                <li class="contentLI">Longitude: <span id="staticLongitude">FILLER</span></li>
+                <li class="contentLI" id="staticLocation">FILLER LOCATION</li>
+                <li class="contentLI" id="staticTime">FILLER TIME</li>
             </ul>
-    
-            <section class="compassBox">
-                <!-- <img src="../images/placeholder100x100.png" alt="North Marker | FILLER CREDIT" id="northMarker"> -->
-                <img src="../images/placeholder100x100.png" alt="Compass | FILLER CREDIT" id="compassIcon">
-            </section>
-    
-        </div>
-        <button class="saveDataBtn">Save This Data</button>
+
+            <a href="#">
+                <img src="../images/placeholder100x100.png" alt="Link to a Map | FILLER ALT" id="mapIcon">
+            </a>
 
         </div>
         <p>Location data acquired from <a href="https://www.w3.org/TR/geolocation/" class="apiCredit">Geolocation API</a></p>
