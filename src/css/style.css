@@ -3,15 +3,40 @@
 /* Start of Small General Styling -- This is for styling used across multiple pages */
 body {
     max-width: 100%;
+    margin-bottom: 2rem;
 }
 
 h1 {
     font-size: 2.5rem;
-    margin: 1rem;
+    margin: auto;
+    height: fit-content;
 }
+
+h2 {
+    font-size: 2rem;
+}
+
 .logoBox {
     display: flex;
     gap: 2rem;
+    padding: 1rem;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:active {
+    color: black
+}
+
+li {
+    font-size: 1.25rem;
 }
 
 #headerULClosed {
@@ -19,14 +44,12 @@ h1 {
     /* MODIFY THIS TO BE HAMBURGER MENU LIKE BOUNTIFUL FOODS */
 }
 
-#headerULOpen,
-#headerULOpen li a {
+#headerULOpen {
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
     text-align: center;
-    list-style-type: none;
     text-decoration: none;
     padding: 0rem;
     gap: 2rem;
@@ -35,67 +58,119 @@ h1 {
 #headerULOpen li a {
     height: fit-content;
 }
+
+.contentMain,
+.contentUL,
+.contentBox,
+.mainPageUL {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.titleBox {
+    width: 90%;
+    text-align: center;
+}
+
+.titleBox h2 {
+    margin: 3rem auto 2rem auto;
+}
+
+hr {
+    margin-top: 2rem;
+    color: black;
+    border: 1px solid black;
+}
+
+button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+}
+
 /* End of Small General Styling */
 
 /* Start of Small Home Page Styling */
+
 .mainPageUL {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    justify-items: center;
-    column-gap: 3rem;
-    /* background-color: rgb(123, 55, 0); */
-    padding: 1rem;
-    border-radius: 5px;
+    margin: 2rem;
+    gap: 1rem;
 }
 
 .mainPageUL a {
     display: block;
-    width: fit-content;
+    width: 100%;
     margin-bottom: 2rem;
     text-decoration: none;
 }
 
 .mainPageLI {
-    list-style-type: none;
-    display: block;
-    align-items: center;
+    display: flex;
+    gap: 1rem;
     text-align: center;
-    font-size: 1.5rem;
-    border: 1px solid black;
+    align-items: center;
+    font-size: 1.4rem;
     border-radius: 0.5rem;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
-    padding: 1rem;
+    padding: 0.75rem;
+}
+
+li p {
+    margin: auto;
 }
 
 .mainPageLI img {
-    width: 125px;
+    width: 90px;
 }
 
 /* End of Small Home Page Styling */
 
 /* Start of Small Current Location Page Styling */
-
+#mapIcon {
+    width: 175px;
+}
 /* End of Small Current Location Page Styling */
 
 /* Start of Small Real Time Location Page Styling */
-
+#compassIcon {
+    width: 250px;
+}
 /* End of Small Real Time Location Page Styling */
 
 /* Start of Small Weather Page Styling */
-
+#weatherImg {
+    width: 150px;
+}
 /* End of Small Weather Page Styling */
 
 /* Start of Small Saved Data Page Styling */
 
 /* End of Small Saved Data Page Styling */
+.savedDataBox {
+    width: 80%;
+    text-align: center;
+}
 
+.savedDataUL li {
+    margin-bottom: 3rem;
+    border: 1px solid black;
+    padding: 1rem;
+}
 /* End of Small View Styling */
 
 
 /* Start of Medium/Large View Styling */
 @media only screen and (min-width: 715px) {
 /* Start of Medium/Large Home Page Styling */
-
+    .mainPageUL {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        justify-items: center;
+        column-gap: 3rem;
+        padding: 1rem;
+    }
 /* End of Medium/Large Home Page Styling */
 
 /* Start of Medium/Large Current Location Page Styling */
