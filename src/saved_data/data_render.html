@@ -11,26 +11,28 @@
 </head>
 <body>
     <header class="divider" id="main-header">
-        <a href="/src/index.html" class="logoBox">
-            <img src="/src/images/placeholder100x100.png" alt="FILLER ALT">
+        <a href="../index.html" class="logoBox">
+            <img src="../images/placeholder100x100.png" alt="FILLER ALT">
             <h1>Where Am I? - Geolocator & Weather</h1>
         </a>
         <ul id="headerULOpen">
         <!-- MODIFY THIS TO BE HAMBURGER MENU LIKE BOUNTIFUL FOODS -->
         <!-- <ul id="headerULClosed">     -->
-            <li><a href="/src/index.html">Home</a></li>
-            <li><a href="/src/current_location/index.html">Current Location</a></li>
-            <li><a href="/src/real_time_location/index.html">Real Time Location</a></li>
-            <li><a href="/src/weather/index.html">Weather</a></li>
-            <li><a href="/src/saved_data/index.html">Saved Data</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../current_location/index.html">Current Location</a></li>
+            <li><a href="../real_time_location/index.html">Real Time Location</a></li>
+            <li><a href="../weather/index.html">Weather</a></li>
+            <li><a href="../saved_data/index.html">Saved Data</a></li>
         </ul>
     </header>
 
-    <main class="contentMain">
-            <div class="titleBox">
-                <h2>Current Location - Saved</h2>
-                <hr>
-            </div>
+    <main class="contentMain"> <!-- JavaScript will dynamically append the requested info to this { main } element -->
+        <!-- DON'T FORGET TO MODIFY THESE TEMPLATES AS NEEDED TO DYNAMICALLY ACCEPT INFO -->
+        <!-- START OF CURRENT LOCATION TEMPLATE -->
+        <div class="titleBox">
+            <h2>Current Location - Saved</h2>
+            <hr>
+        </div>
 
         <div class="contentBox">
             <ul class="contentUL">
@@ -46,6 +48,63 @@
 
         </div>
         <p>Location data acquired from <a href="https://www.w3.org/TR/geolocation/" class="apiCredit">Geolocation API</a></p>
+        <!-- END OF CURRENT LOCATION TEMPLATE -->
+
+        <!-- START OF REAL TIME TEMPLATE -->
+        <div class="titleBox">
+            <h2>Real Time Location</h2>
+            <hr>
+        </div>
+
+        <div class="contentBox">
+            <ul class="contentUL">
+                <li class="contentLI">Latitude: <span id="realTimeLatitude">FILLER</span></li>
+                <li class="contentLI">Longitude: <span id="realTimeLongitude">FILLER</span></li>
+                <li class="contentLI"><span id="realTimeHeading">Heading: </span>FILLER</li>
+                <li class="contentLI"><span id="realTimeSpeed">Speed: </span>FILLER</li>
+                <li class="contentLI" id="realTimeLocation">FILLER LOCATION</li>
+                <li class="contentLI" id="realTimeTime">FILLER TIME</li>
+            </ul>
+            
+            <!-- When Real Time data is saved, it may or may not take a snapshot of the compass.   That depends if it's easy or hard to do that -->
+            <section class="compassBox">
+                <!-- <img src="../images/placeholder100x100.png" alt="North Marker | FILLER CREDIT" id="northMarker"> -->
+                <img src="../images/placeholder100x100.png" alt="Compass | FILLER CREDIT" id="compassIcon">
+            </section>
+        </div>
+
+        <p>Location data acquired from <a href="https://www.w3.org/TR/geolocation/" class="apiCredit">Geolocation API</a></p>
+        <!-- END OF REAL TIME TEMPLATE -->
+        
+        <!-- START OF WEATHER TEMPLATE -->
+        <div class="titleBox">
+            <h2>Weather</h2>
+            <button id="findInfoBtn">Find My Weather</button>
+            <hr>
+        </div>
+        <div class="contentBox">
+            <ul class="contentUL">
+                <li class="contentLI">
+                    <img src="../images/placeholder100x100.png" alt="FILLER ALT" id="weatherImg">
+                </li>
+                <li class="contentLI" id="weatherCity">FILLER CITY</li>
+                <li class="contentLI" id="weatherTemp">FILLER TEMP</li>
+                <li class="contentLI" id="weatherType">FILLER TYPE</li>
+                <li class="contentLI">High: <span id="weatherTempHigh">FILLER</span> | Low: <span id="weatherTempLow">FILLER</span></li>
+            </ul>
+
+            <ul class="contentUL">
+                <li class="contentLI">Wind: <span id="weatherWind">FILLER</span></li>
+                <li class="contentLI">Humidity: <span id="weatherHumidity">FILLER</span></li>
+                <li class="contentLI">Sunrise: <span id="weatherSunrise">FILLER</span></li>
+                <li class="contentLI">Sunset: <span id="weatherSunset">FILLER</span></li>
+                <li class="contentLI" id="weatherTime">FILLER TIME</li>
+            </ul>
+
+            <button class="saveDataBtn">Save This Data</button>
+        </div>
+        <p>Weather data acquired from <a href="https://openweathermap.org/" class="apiCredit">OpenWeather API</a></p>
+        <!-- END OF WEATHER TEMPLATE -->
     </main>
 </body>
 </html>
