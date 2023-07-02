@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Kobe Lemon">
     <meta name="description" content="Where am I? | Geolocator and Weather Application | Saved Data Render Page">
-    <title>Where Am I? | Current Location</title>
+    <title>Where Am I? | Saved Data Render</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/normalize.css">
 </head>
@@ -13,11 +13,11 @@
     <header class="divider" id="main-header">
         <a href="/src/index.html" class="logoBox">
             <img src="/src/images/placeholder100x100.png" alt="FILLER ALT">
-            <h1>Where Am I?</h1>
+            <h1>Where Am I? - Geolocator & Weather</h1>
         </a>
-        <!-- <ul id="headerULOpen"> -->
+        <ul id="headerULOpen">
         <!-- MODIFY THIS TO BE HAMBURGER MENU LIKE BOUNTIFUL FOODS -->
-        <ul id="headerULClosed">    
+        <!-- <ul id="headerULClosed">     -->
             <li><a href="/src/index.html">Home</a></li>
             <li><a href="/src/current_location/index.html">Current Location</a></li>
             <li><a href="/src/real_time_location/index.html">Real Time Location</a></li>
@@ -33,20 +33,19 @@
             </div>
 
         <div class="contentBox">
-            <section>
-                <ul class="contentUL">
-                    <li class="contentLI">Latitude: <span id="staticLatitude">FILLER</span></li>
-                    <li class="contentLI">Longitude: <span id="staticLongitude">FILLER</span></li>
-                    <li class="contentLI" id="staticLocation">FILLER LOCATION</li>
-                    <li class="contentLI" id="staticTime">FILLER TIME</li>
-                </ul>
-            </section>
+            <ul class="contentUL">
+                <li class="contentLI">Latitude: <span id="staticLatitude">FILLER</span></li>
+                <li class="contentLI">Longitude: <span id="staticLongitude">FILLER</span></li>
+                <li class="contentLI" id="staticLocation">FILLER LOCATION</li>
+                <li class="contentLI" id="staticTime">FILLER TIME</li>
+            </ul>
 
-            <section>
+            <a href="#">
                 <img src="../images/placeholder100x100.png" alt="Link to a Map | FILLER ALT" id="mapIcon">
-            </section>
+            </a>
 
         </div>
+        <p>Location data acquired from <a href="https://www.w3.org/TR/geolocation/" class="apiCredit">Geolocation API</a></p>
     </main>
 </body>
 </html>

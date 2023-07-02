@@ -1,15 +1,36 @@
+/* Colors:
+    Dark Blue: #072E74
+    Light Blue: #6DB9D5
+    Light Tan: #FFF8D8
+    Light Green: #17BC4E
+*/
+
 /* Start of Small View Styling */
     
 /* Start of Small General Styling -- This is for styling used across multiple pages */
+html {
+    background-color: #FFF8D8;
+}
+
 body {
     max-width: 100%;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
+}
+
+header {
+    background-color: #072E74;
 }
 
 h1 {
     font-size: 2.5rem;
     margin: auto;
     height: fit-content;
+}
+
+h2,
+li,
+p {
+    color: #072E74;
 }
 
 h2 {
@@ -20,6 +41,11 @@ h2 {
     display: flex;
     gap: 2rem;
     padding: 1rem;
+    align-items: center;
+}
+
+.logoBox img {
+    max-height: 100px;
 }
 
 ul {
@@ -27,12 +53,27 @@ ul {
     padding: 0rem;
 }
 
+#headerULOpen li:hover,
+button:hover,
+.mainPageLI:hover,
+.savedDataUL a:hover {
+    transform: scale(1.05);
+}
+
+#headerULOpen li,
+button,
+.mainPageLI,
+.savedDataUL a {
+    transition: 0.25s ease;
+}
+
 a {
+    color: #FFF8D8;
     text-decoration: none;
 }
 
 a:active {
-    color: black
+    color: #FFF8D8
 }
 
 li {
@@ -48,15 +89,16 @@ li {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex-wrap: wrap;
     text-align: center;
     text-decoration: none;
-    padding: 0rem;
     gap: 2rem;
+    border-top: 1px solid #FFF8D8;
+    padding-top: 1rem;
 }
 
-#headerULOpen li a {
-    height: fit-content;
+#headerULOpen li {
+    border-bottom: 1px solid #FFF8D8;
+    padding-bottom: 1rem;
 }
 
 .contentMain,
@@ -80,19 +122,44 @@ li {
 
 hr {
     margin-top: 2rem;
-    color: black;
-    border: 1px solid black;
+    border: 1px solid #072E74;
 }
 
 button {
     padding: 0.5rem;
     font-size: 1rem;
     border-radius: 0.5rem;
+    background-color: #17bc4e;
+    color: #FFF8D8;
+}
+
+.saveDataBtn {
+    margin-bottom: 2rem;
+}
+
+li p {
+    margin: auto;
+    color: #FFF8D8;
+}
+
+legend,
+.noData {
+    font-size: 1.25rem;
+    color: #072E74;
+}
+
+.apiCredit {
+    color: #072E74;
+    text-decoration: underline;
 }
 
 /* End of Small General Styling */
 
 /* Start of Small Home Page Styling */
+/* This makes the nav bar always gone when home page is in large mode */
+#homeHeader ul {
+    display: none;
+}
 
 .mainPageUL {
     margin: 2rem;
@@ -115,10 +182,7 @@ button {
     border-radius: 0.5rem;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
     padding: 0.75rem;
-}
-
-li p {
-    margin: auto;
+    background-color: #17bc4e;
 }
 
 .mainPageLI img {
@@ -146,23 +210,54 @@ li p {
 /* End of Small Weather Page Styling */
 
 /* Start of Small Saved Data Page Styling */
-
-/* End of Small Saved Data Page Styling */
 .savedDataBox {
     width: 80%;
     text-align: center;
 }
 
 .savedDataUL li {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     border: 1px solid black;
     padding: 1rem;
 }
+
+.savedDataMain .savedDataBox:last-child {
+    margin-bottom: 2rem;
+}
+/* End of Small Saved Data Page Styling */
 /* End of Small View Styling */
 
 
 /* Start of Medium/Large View Styling */
 @media only screen and (min-width: 715px) {
+/* Start of Medium/Large General Styling */
+    header,
+    .logoBox {
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    .contentBox {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #headerULOpen {
+        flex-direction: row;
+        align-items: center;
+        border-top: none;
+        border-left: 1px solid #FFF8D8;
+        padding: 2rem;
+        max-height: 2rem;
+    }
+    
+    #headerULOpen li {
+        border-bottom: none;
+        padding-bottom: 0rem;
+    }
+/* End of Medium/Large General Styling */
+
 /* Start of Medium/Large Home Page Styling */
     .mainPageUL {
         display: grid;
@@ -186,6 +281,15 @@ li p {
 /* End of Medium/Large Weather Page Styling */
 
 /* Start of Medium/Large Saved Data Page Styling */
+    .savedDataUL {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+    }
+
+    .savedDataUL p {
+        grid-column: 2 / span 1;
+    }
 
 /* End of Medium/Large Saved Data Page Styling */
 }
