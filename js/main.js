@@ -1,5 +1,9 @@
 import { renderWithTemplate } from "./utils.mjs";
 
+if (!navigator.geolocation) {
+    alert("Geolocation not available. Please try again later, or try again with a different device.")
+}
+
 function headerTemplateFunc() {
     const headerTemplateElement = 
     `<a href="/index.html" class="logoBox">
