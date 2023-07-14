@@ -9,33 +9,19 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/normalize.css">
     <script src="../js/main.js" type="module"></script>
+    <script src="../js/currentLocation.mjs" type="module"></script>
 </head>
 <body>
     <header class="header" id="main-header"></header>
 
     <main class="contentMain">
-            <div class="titleBox">
-                <h2>Current Location</h2>
-                <button id="findInfoBtn">Find My Location</button>
-                <hr>
-            </div>
-
-        <div class="contentBox">
-            <ul class="contentUL">
-                <li class="contentLI">Latitude: <span id="staticLatitude">FILLER</span></li>
-                <li class="contentLI">Longitude: <span id="staticLongitude">FILLER</span></li>
-                <li class="contentLI" id="staticLocation">FILLER LOCATION</li>
-                <li class="contentLI" id="staticTime">FILLER TIME</li>
-            </ul>
-
-            <a href="#">
-                <img src="../images/map_icon.png" alt="Link to a Map | FILLER ALT" id="mapIcon">
-            </a>
-
-            <button class="saveDataBtn">Save This Data</button>
-
+        <div class="titleBox">
+            <h2>Current Location</h2>
+            <button id="findInfoBtn">Find My Location</button>
+            <hr>
         </div>
-        <p>Location data acquired from <a href="https://www.w3.org/TR/geolocation/" class="apiCredit">Geolocation API</a></p>
+
+        <div class="contentBox"></div>
     </main>
 </body>
 </html>

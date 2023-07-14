@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/normalize.css">
     <script src="../js/main.js" type="module"></script>
+    <script src="../js/weather.mjs" type="module"></script>
 </head>
 <body>
     <header class="header" id="main-header"></header>
@@ -19,28 +20,7 @@
             <button id="findInfoBtn">Find My Weather</button>
             <hr>
         </div>
-        <div class="contentBox">
-            <ul class="contentUL">
-                <li class="contentLI">
-                    <img src="../images/placeholder100x100.png" alt="FILLER ALT" id="weatherImg">
-                </li>
-                <li class="contentLI" id="weatherCity">FILLER CITY</li>
-                <li class="contentLI" id="weatherTemp">FILLER TEMP</li>
-                <li class="contentLI" id="weatherType">FILLER TYPE</li>
-                <li class="contentLI">High: <span id="weatherTempHigh">FILLER</span> | Low: <span id="weatherTempLow">FILLER</span></li>
-            </ul>
-
-            <ul class="contentUL">
-                <li class="contentLI">Wind: <span id="weatherWind">FILLER</span></li>
-                <li class="contentLI">Humidity: <span id="weatherHumidity">FILLER</span></li>
-                <li class="contentLI">Sunrise: <span id="weatherSunrise">FILLER</span></li>
-                <li class="contentLI">Sunset: <span id="weatherSunset">FILLER</span></li>
-                <li class="contentLI" id="weatherTime">FILLER TIME</li>
-            </ul>
-
-            <button class="saveDataBtn">Save This Data</button>
-        </div>
-        <p>Weather data acquired from <a href="https://openweathermap.org/" class="apiCredit">OpenWeather API</a></p>
+        <div class="contentBox"></div>
     </main>
 </body>
 </html>

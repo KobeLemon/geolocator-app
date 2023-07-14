@@ -158,6 +158,10 @@ li {
     align-items: center;
 }
 
+.contentBox p {
+    margin-top: 0px;
+}
+
 .titleBox {
     width: 90%;
     text-align: center;
@@ -309,6 +313,7 @@ legend,
     .contentBox {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        justify-items: center;
     }
 
     #hamburgerBtn {
