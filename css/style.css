@@ -16,6 +16,9 @@ body {
 
 header {
     background-color: #072E74;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
@@ -58,12 +61,12 @@ button:hover,
     transform: scale(1.05);
 }
 
-#headerULOpen li:hover {
-    background-color: #051e4b;
+#headerNav li:hover {
+    border-radius: 0.5rem;
     transform: scale(1.05);
 }
 
-#headerULOpen li,
+#headerNav li,
 button,
 .mainPageLI,
 .savedDataUL a,
@@ -72,11 +75,70 @@ button,
     transition: 0.4s ease;
 }
 
+
 header a,
 .savedDataUL a {
     color: #FFF8D8;
     text-decoration: none;
 }
+
+/* Start of Hamburger Button Styling */
+
+#hamburgerBtn {
+    font-size: 2rem;
+    box-shadow: none;
+    width: 100%;
+    border-bottom: 3px solid white;
+}
+
+#hamburgerBtn.open {
+    margin-bottom: 0rem;
+}
+
+#headerNav.open li {
+    width: 99%;
+    padding-bottom: 1.5rem;
+    border-bottom: 3px solid white;
+}
+
+#hamburgerBtn span:nth-child(1) {
+    display: block;
+}
+
+#hamburgerBtn span:nth-child(2) {
+    display: none;
+}
+
+#hamburgerBtn.open span:nth-child(1) {
+    display: none;
+}
+
+#hamburgerBtn.open span:nth-child(2) {
+    display: block;
+    padding: 0.3rem;
+    border-radius:0.5rem;
+}
+
+#headerNav.open {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1.5rem;
+}
+
+
+#headerNav {
+    display: none;
+    margin: 0px;
+    padding-top: 1rem;
+}
+
+nav {
+    width: 100%;
+    background-color: #17bc4e;
+    text-align: center;
+}
+/* End of Hamburger Button Styling */
 
 a:active {
     color: #FFF8D8
@@ -84,29 +146,6 @@ a:active {
 
 li {
     font-size: 1.25rem;
-}
-
-#headerULClosed {
-    display: none;
-    /* MODIFY THIS TO BE HAMBURGER MENU */
-}
-
-#headerULOpen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    text-decoration: none;
-    /* gap: 1rem; */
-    border-top: 1px solid #FFF8D8;
-    padding-top: 1rem;
-}
-
-#headerULOpen li {
-    border-bottom: 1px solid #FFF8D8;
-    /* padding-bottom: 1rem; */
-    padding: 0.5rem;
-    border-radius: 0.5rem;
 }
 
 .contentMain,
@@ -168,7 +207,7 @@ legend,
 
 /* Start of Small Home Page Styling */
 /* This makes the nav bar always gone on the home page */
-#homeHeader ul {
+#main-page header nav {
     display: none;
 }
 
@@ -225,9 +264,14 @@ legend,
     text-align: center;
 }
 
+.savedDataUL {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .savedDataUL a {
-    margin-bottom: 2rem;
-    border: 1px solid black;
+    border: 1px solid #128a3a;
     border-radius: 0.25rem;
     padding: 0.75rem;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
@@ -257,7 +301,7 @@ legend,
 /* Start of Large General Styling */
     header,
     .logoBox {
-        display: flex;
+        flex-direction: row;
         align-items: center;
         gap: 4rem;
     }
@@ -267,22 +311,29 @@ legend,
         grid-template-columns: 1fr 1fr;
     }
 
-    #headerULOpen {
-        flex-direction: row;
-        align-items: center;
-        border-top: none;
-        border-left: 1px solid #FFF8D8;
-        padding: 2rem;
-        max-height: 2rem;
+    #hamburgerBtn {
+        display: none;
     }
-    
-    #headerULOpen li {
-        border-bottom: none;
-        /* padding-bottom: 0rem; */
+
+    #headerNav {
+        display: flex;
+        flex-direction: row;
+        background-color: #072E74;
+        gap: 1rem;
+        border-left: 1px solid #FFF8D8;
+        padding: 1rem;
+    }
+
+    #headerNav li {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1rem 1rem 0rem;
+        border-right: 1px solid #FFF8D8;
     }
 /* End of Large General Styling */
 
 /* Large Home Page Styling */
+
     .mainPageUL {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));

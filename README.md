@@ -4,4 +4,4 @@ Hello! My name is Kobe Lemon and I am a Web Developer! I am currently going to s
 
 This site is my final project for my WDD 330 Web Frontend Development class. This is a site that uses the Geolocation API and the OpenWeather API to show your current static location, your current real time location, and the weather data for your current location.
 
-**[Kobe's Geolocator Site](https://kobelemon.github.io/geolocator-app/src)**
+**[Click here for my Geolocator Site!](https://kobelemon.github.io/geolocator-app/)**
