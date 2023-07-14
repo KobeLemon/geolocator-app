@@ -1,3 +1,5 @@
+
+
 export function renderWithTemplate(template, parentIDClass, position = "afterbegin") {
     console.log(`Entered renderWithTemplate`);
     const parentLocation = document.querySelector(parentIDClass);
@@ -11,13 +13,12 @@ export function renderWithTemplate(template, parentIDClass, position = "afterbeg
     console.log(`Finished renderWithTemplate`);
 }
 
-export function renderFoundData(template, parentIDClass) {
-    console.log(`Entered renderFoundData`);
-    const findinfoBtn = document.getElementById("findInfoBtn");
-    findinfoBtn.addEventListener("click", () => {
-        console.log(`Entered findinfoBtn.addEventListener`);
-        renderWithTemplate(template, parentIDClass)
-        console.log(`Finished findinfoBtn.addEventListener`);
+export function currentDate() {
+    const today = new Date();
+    const dateTime = new Intl.DateTimeFormat("en-US", {
+        dateStyle: "full",
+        timeStyle: "long"
     })
-    console.log(`Finished renderFoundData`);
+    const currentDateTime = dateTime.format(today);
+    return currentDateTime;
 }
