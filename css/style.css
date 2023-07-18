@@ -151,13 +151,19 @@ li {
     font-size: 1.25rem;
 }
 
-.contentMain,
 .contentUL,
 .contentBox,
 .mainPageUL {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    align-items: center;
+}
+
+.contentMain {
+    display: flex;
+    flex-direction: column;
+    /* gap: 2rem; */
     align-items: center;
 }
 
@@ -348,6 +354,11 @@ legend,
         justify-items: center;
         column-gap: 3rem;
         padding: 1rem;
+    }
+
+/* Large Weather Page Styling */
+    #weatherBox2 {
+        margin-top: 9rem;
     }
 
 /* Large Saved Data Page Styling */

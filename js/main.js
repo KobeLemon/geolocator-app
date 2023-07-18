@@ -6,8 +6,8 @@ if (!navigator.geolocation) {
 
 function headerTemplateFunc() {
     const headerTemplateElement = 
-    `<a href="/index.html" class="logoBox">
-        <img src="/images/compass_logo.png" alt="Compass Logo">
+    `<a href="../index.html" class="logoBox">
+        <img src="../images/compass_logo.png" alt="Compass Logo">
         <h1>Where Am I? - Geolocator & Weather</h1>
     </a>
 
@@ -21,11 +21,11 @@ function headerTemplateFunc() {
         </button>
 
         <ul id="headerNav">
-            <li><a href="/index.html">Home</a></li>
-            <li><a href="/current_location/index.html">Current Location</a></li>
-            <li><a href="/real_time_location/index.html">Real Time Location</a></li>
-            <li><a href="/weather/index.html">Weather</a></li>
-            <li><a href="/saved_data/index.html">Saved Data</a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../current_location/index.html">Current Location</a></li>
+            <li><a href="../real_time_location/index.html">Real Time Location</a></li>
+            <li><a href="../weather/index.html">Weather</a></li>
+            <li><a href="../saved_data/index.html">Saved Data</a></li>
         </ul>
 
     </nav>`;

@@ -14,13 +14,29 @@ export function renderWithTemplate(template, parentIDClass, position = "afterbeg
 }
 
 export function currentDate() {
-    const today = new Date();
-    const dateTime = new Intl.DateTimeFormat("en-US", {
+    let today = new Date();
+    let dateTime = new Intl.DateTimeFormat("en-US", {
         dateStyle: "full",
         timeStyle: "long"
     })
-    const currentDateTime = dateTime.format(today);
+    let currentDateTime = dateTime.format(today);
     return currentDateTime;
+}
+
+export function formatUnixDate(time){
+    let dateObj = new Date(time * 1000);
+    let hours = dateObj.getHours().toString().padStart(2,0);
+    let minutes = dateObj.getMinutes().toString().padStart(2,0);
+    let suffix = "";
+    if (hours >=0 && hours <= 11) {
+        suffix = "AM";
+    } else if (hours >= 12 && hours <= 23) {
+        suffix = "PM";
+    } else {
+        alert("Invalid Date");
+    }
+    let formattedDateTime = `${hours}:${minutes} ${suffix}`;
+    return formattedDateTime;
 }
 
 export async function getCityInfo(latitude, longitude) {
@@ -44,4 +60,16 @@ export async function getCityInfo(latitude, longitude) {
     } catch (error) {
         console.error(error);
     }
+}
+
+export function capitalizeSentence(sentence) {
+    let string = sentence.split(' ');
+    let newString = []
+    string.forEach(item =>{
+        let itemSplit = item.split('');
+        itemSplit[0] = itemSplit[0].toUpperCase();
+        let itemJoin = itemSplit.join('')
+        newString.push(itemJoin)
+    })
+    return newString = newString.join(' ');
 }
