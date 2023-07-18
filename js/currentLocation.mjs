@@ -16,7 +16,7 @@ async function successCallback(position) {
     renderWithTemplate(currentLocTemplate, ".contentBox");
 }
 
-const errorCallBack = (error) => {
+function errorCallBack(error) {
     console.log(error);
     if (error.code === 1) {
         alert("Sorry, Location Access is required to use this site. \nPlease reset your location permissions, then refresh the page & allow location access.");
