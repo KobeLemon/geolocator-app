@@ -25,6 +25,7 @@ const findinfoBtn = document.getElementById("findInfoBtn");
 findinfoBtn.addEventListener("click", () => {
     console.log(`Entered currentLocation findinfoBtn.addEventListener`);
     navigator.geolocation.getCurrentPosition(successCallback, errorCallBack);
+    document.querySelector(".saveDataBtn").innerText = `Save This Data`
     utilsModule.saveTemplate(".contentBox", "currentLocation");
     console.log(`Finished currentLocation findinfoBtn.addEventListener`);
 })
@@ -32,18 +33,18 @@ findinfoBtn.addEventListener("click", () => {
 function currentLocTemplateFunc(location, lat, lon, date) {
     const currentLocTemplateElement = 
     `<ul class="contentUL">
-        <li class="contentLI"><strong>Latitude:</strong> <span id="staticLatitude">${lat.toFixed(5)}</span></li>
-        <li class="contentLI"><strong>Longitude:</strong> <span id="staticLongitude">${lon.toFixed(5)}</span></li>
-        <li class="contentLI" id="staticLocation">${location}</li>
-        <li class="contentLI" id="staticTime">${date}</li>
+        <li><strong>Latitude:</strong> <span>${lat.toFixed(5)}</span></li>
+        <li><strong>Longitude:</strong> <span>${lon.toFixed(5)}</span></li>
+        <li>${location}</li>
+        <li>${date}</li>
     </ul>
 
     <a href="http://www.google.com/maps/place/${lat},${lon}" target="_blank" class="mapLink">
-        <img src="../images/map_icon.png" alt="Link to a Map" id="mapIcon">
+        <img src="../images/map_icon.png" alt="Link to a Map" class="mapIcon">
         <p>Link to a Map ↑</p>
     </a>
 
-    <p>Location data acquired from <a href="https://www.w3.org/TR/geolocation/" class="apiCredit">Geolocation API</a></p>`
+    <p class="apiBox">Location data acquired from <a href="https://www.w3.org/TR/geolocation/" class="apiCredit">Geolocation API</a></p>`
     
     return currentLocTemplateElement
 }

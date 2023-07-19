@@ -25,6 +25,7 @@ const findinfoBtn = document.getElementById("findInfoBtn");
 findinfoBtn.addEventListener("click", () => {
     console.log(`Entered Weather findinfoBtn.addEventListener`);
     navigator.geolocation.getCurrentPosition(successCallback, errorCallBack);
+    document.querySelector(".saveDataBtn").innerText = `Save This Data`
     utilsModule.saveTemplate(".contentBox", "weather");
     console.log(`Finished Weather findinfoBtn.addEventListener`);
 })
@@ -62,25 +63,24 @@ function getAPIInfo(weatherData, index = 0) {
 function weatherTemplateFunc(argArray) {
     const weatherTemplateElement =
     `<ul class="contentUL">
-        <li class="contentLI">
-            <img src="${argArray.icon}" alt="${argArray.description}" id="weatherImg">
+        <li>
+            <img src="${argArray.icon}" alt="${argArray.description}" class="weatherImg">
         </li>
-        <li class="contentLI" id="weatherCity">${argArray.location}</li>
-        <li class="contentLI" id="weatherTemp">${argArray.tempCurrent}</li>
-        <li class="contentLI" id="weatherType">${argArray.description}</li>
-        <li class="contentLI"><strong>High:</strong> <span id="weatherTempHigh">${argArray.tempHigh}</span> | <strong>Low:</strong> <span id="weatherTempLow">${argArray.tempLow}</span></li>
+        <li>${argArray.location}</li>
+        <li>${argArray.tempCurrent}</li>
+        <li>${argArray.description}</li>
+        <li><strong>High:</strong> <span>${argArray.tempHigh}</span> | <strong>Low:</strong> <span>${argArray.tempLow}</span></li>
     </ul>
 
-    <ul id="weatherBox2"class="contentUL">
-        <li class="contentLI"><strong>Wind:</strong> <span id="weatherWind">${argArray.windspeed}</span></li>
-        <li class="contentLI"><strong>Humidity:</strong> <span id="weatherHumidity">${argArray.humidity}</span></li>
-        <li class="contentLI"><strong>Sunrise:</strong> <span id="weatherSunrise">${argArray.sunrise}</span></li>
-        <li class="contentLI"><strong>Sunset:</strong> <span id="weatherSunset">${argArray.sunset}</span></li>
-        <li class="contentLI" id="weatherTime">${argArray.time}</li>
+    <ul class="contentUL"class="contentUL">
+        <li><strong>Wind:</strong> <span>${argArray.windspeed}</span></li>
+        <li><strong>Humidity:</strong> <span>${argArray.humidity}</span></li>
+        <li><strong>Sunrise:</strong> <span>${argArray.sunrise}</span></li>
+        <li><strong>Sunset:</strong> <span>${argArray.sunset}</span></li>
+        <li>${argArray.time}</li>
     </ul>
 
-    <button class="saveDataBtn">Save This Data</button>
-    <p>Weather data acquired from <a href="https://openweathermap.org/" class="apiCredit">OpenWeather API</a></p>`
+    <p class="apiBox">Weather data acquired from <a href="https://openweathermap.org/" class="apiCredit">OpenWeather API</a></p>`
     
     return weatherTemplateElement;
 }

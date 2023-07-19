@@ -8,8 +8,8 @@
     <title>Where Am I? | Current Location</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/normalize.css">
-    <script src="../js/main.js" type="module"></script>
-    <script src="../js/currentLocation.mjs" type="module"></script>
+    <script type="module" src="../js/main.js"></script>
+    <script type="module" src="../js/currentLocation.mjs"></script>
 </head>
 <body>
     <header class="header" id="main-header"></header>
@@ -18,7 +18,8 @@
         <div class="titleBox">
             <h2>Current Location</h2>
             <button id="findInfoBtn">Find My Location</button>
-            <button class="saveDataBtn inactive">Save This Data</button>
+            <button class="saveDataBtn" id="inactive">Save This Data</button>
+            <p>Note- It takes a few seconds for the data to appear or change</p>
         </div>
 
         <div class="contentBox"></div>
