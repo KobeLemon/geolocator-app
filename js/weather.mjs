@@ -1,4 +1,4 @@
-import { renderWithTemplate, currentDate, capitalizeSentence, formatUnixDate } from "./utils.mjs"
+import * as utilsModule from "./utils.mjs"
 
 async function successCallback(position) {
     console.log(position)
@@ -6,10 +6,10 @@ async function successCallback(position) {
     console.log(`latitude: ${latitude}`);
     console.log(`longitude: ${longitude}`);
     let url = `https://api.openweathermap.org/data/2.5/forecast?units=imperial&lat=${latitude}&lon=${longitude}&appid=659d1abc1a1e9d987421cfc8b88e65fc`;
-    let data = await apiFetch(url);
-    const argArray = getAPIInfo(data);
+    let data = await utilsModule.apiFetch(url);
+    let argArray = getAPIInfo(data);
     let weatherTemplate = weatherTemplateFunc(argArray);
-    renderWithTemplate(weatherTemplate, ".contentBox");
+    utilsModule.renderWithTemplate("Weather", weatherTemplate, ".contentBox");
 }
 
 function errorCallBack(error) {
@@ -25,46 +25,23 @@ const findinfoBtn = document.getElementById("findInfoBtn");
 findinfoBtn.addEventListener("click", () => {
     console.log(`Entered Weather findinfoBtn.addEventListener`);
     navigator.geolocation.getCurrentPosition(successCallback, errorCallBack);
+    utilsModule.saveTemplate(".contentBox", "weather");
     console.log(`Finished Weather findinfoBtn.addEventListener`);
 })
 
-async function apiFetch(url){
-    try{
-        const response = await fetch(url);
-        if (response.ok){
-            const data = await response.json();
-            console.log(data);
-            return data;
-        }else{
-            throw Error(await response.text());
-        }
-    }catch (error){
-        console.log(error);
-    }}
-
-function getAPIInfo(weatherData, index = 0) {
-
-    let city = weatherData.city.name;
-    let country = weatherData.city.country;
-    let rawSunrise = weatherData.city.sunrise;
-    let rawSunset = weatherData.city.sunset;
-    let formatSunrise = formatUnixDate(rawSunrise);
-    console.log(`formatSunrise: ${formatSunrise}`);
-    let formatSunset = formatUnixDate(rawSunset);
-    console.log(`formatSunset: ${formatSunset}`);
-    
+function getAPIInfo(weatherData, index = 0) {    
     let resultsArray = {
         icon: `https://openweathermap.org/img/w/${weatherData.list[index].weather[0].icon}.png`,
-        description: capitalizeSentence(weatherData.list[index].weather[0].description),
-        location: `${city}, ${country}`,
+        description: utilsModule.capitalizeSentence(weatherData.list[index].weather[0].description),
+        location: `${weatherData.city.name}, ${weatherData.city.country}`,
         tempCurrent: `${weatherData.list[index].main.temp}° F`,
         tempHigh: `${weatherData.list[index].main.temp_max}° F`,
         tempLow: `${weatherData.list[index].main.temp_min}° F`,
         windspeed: `${weatherData.list[index].wind.speed} mph`,
         humidity: `${weatherData.list[index].main.humidity}%`,
-        sunrise: formatUnixDate(weatherData.city.sunrise),
-        sunset: formatUnixDate(weatherData.city.sunset),
-        time: currentDate(),
+        sunrise: utilsModule.formatUnixDate(weatherData.city.sunrise),
+        sunset: utilsModule.formatUnixDate(weatherData.city.sunset),
+        time: utilsModule.currentDate(),
     }
     // console.log(weatherData);
     // console.log(`iconSRC: ${resultsArray.icon}`);
@@ -83,24 +60,23 @@ function getAPIInfo(weatherData, index = 0) {
 }
 
 function weatherTemplateFunc(argArray) {
-    let args = argArray 
     const weatherTemplateElement =
     `<ul class="contentUL">
         <li class="contentLI">
-            <img src="${args.icon}" alt="${args.description}" id="weatherImg">
+            <img src="${argArray.icon}" alt="${argArray.description}" id="weatherImg">
         </li>
-        <li class="contentLI" id="weatherCity">${args.location}</li>
-        <li class="contentLI" id="weatherTemp">${args.tempCurrent}</li>
-        <li class="contentLI" id="weatherType">${args.description}</li>
-        <li class="contentLI">High: <span id="weatherTempHigh">${args.tempHigh}</span> | Low: <span id="weatherTempLow">${args.tempLow}</span></li>
+        <li class="contentLI" id="weatherCity">${argArray.location}</li>
+        <li class="contentLI" id="weatherTemp">${argArray.tempCurrent}</li>
+        <li class="contentLI" id="weatherType">${argArray.description}</li>
+        <li class="contentLI"><strong>High:</strong> <span id="weatherTempHigh">${argArray.tempHigh}</span> | <strong>Low:</strong> <span id="weatherTempLow">${argArray.tempLow}</span></li>
     </ul>
 
     <ul id="weatherBox2"class="contentUL">
-        <li class="contentLI">Wind: <span id="weatherWind">${args.windspeed}</span></li>
-        <li class="contentLI">Humidity: <span id="weatherHumidity">${args.humidity}</span></li>
-        <li class="contentLI">Sunrise: <span id="weatherSunrise">${args.sunrise}</span></li>
-        <li class="contentLI">Sunset: <span id="weatherSunset">${args.sunset}</span></li>
-        <li class="contentLI" id="weatherTime">${args.time}</li>
+        <li class="contentLI"><strong>Wind:</strong> <span id="weatherWind">${argArray.windspeed}</span></li>
+        <li class="contentLI"><strong>Humidity:</strong> <span id="weatherHumidity">${argArray.humidity}</span></li>
+        <li class="contentLI"><strong>Sunrise:</strong> <span id="weatherSunrise">${argArray.sunrise}</span></li>
+        <li class="contentLI"><strong>Sunset:</strong> <span id="weatherSunset">${argArray.sunset}</span></li>
+        <li class="contentLI" id="weatherTime">${argArray.time}</li>
     </ul>
 
     <button class="saveDataBtn">Save This Data</button>

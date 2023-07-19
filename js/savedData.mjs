@@ -1,6 +1,4 @@
-// import {currentLocTemplateFunc} from "./currentLocation.mjs"
-// import {realTimeTemplateFunc} from "./realTimeLocation.mjs"
-// import {weatherTemplateFunc} from "./weather.mjs"
+// import { getLocalStorage, renderWithTemplate } from "./utils.mjs";
 
 // let currentLocTemplate = currentLocTemplateFunc();
 // let realTimeTemplate = realTimeTemplateFunc();
@@ -29,3 +27,6 @@
 
 // let savedDataTemplate = savedDataTemplateFunc();
 // renderFoundData(savedDataTemplate, ".contentBox");
+
+// document.querySelector(".contentBox").innerHTML = savedTemplate;
+// let savedTemplate = getLocalStorage(key);

@@ -1,17 +1,65 @@
+export function getLocalStorage(key) {
+    return JSON.parse(localStorage.getItem(key));
+}
 
+export function setLocalStorage(key, data) {
+    localStorage.setItem(key, JSON.stringify(data));
+}
 
-export function renderWithTemplate(template, parentIDClass, position = "afterbegin") {
-    console.log(`Entered renderWithTemplate`);
+export function renderWithTemplate(callLocation, template, parentIDClass, position = "afterbegin") {
+    console.log(`Entered ${callLocation} renderWithTemplate`);
     const parentLocation = document.querySelector(parentIDClass);
     if (parentLocation.innerHTML == "") {
         parentLocation.insertAdjacentHTML(position, template);
+        console.log(`${callLocation} Template rendered`)
     } else {
+        console.log(`Entered ${callLocation} renderWithTemplate clear parentLocation`);
         // This else statement runs if parentLocation already has content (e.g. findInfoBtn was already pressed) & it deletes that content, then fills it with new content. This prevents parentLocation from stacking multiple instances of content, whereas we only want one instance at a time.
         parentLocation.innerHTML = "";
+        console.log(`${callLocation} renderWithTemplate parentLocation cleared`);
         parentLocation.insertAdjacentHTML(position, template);
+        console.log(`${callLocation} Template rendered`)
+        console.log(`Finished ${callLocation} renderWithTemplate clear parentLocation`);
     }
-    console.log(`Finished renderWithTemplate`);
+    console.log(`${callLocation} Finished renderWithTemplate`);
 }
+
+export function saveTemplate(parent, key) {
+    const saveDataBtn = document.querySelector(".saveDataBtn");
+    const parentElem = document.querySelector(parent);
+    saveDataBtn.classList.remove("inactive");
+    setTimeout(() => {
+        console.log("saveDataBtn Ready")
+        saveDataBtn.addEventListener("click", () => {
+            console.log(parentElem.innerHTML);
+            console.log(`key: ${key}`);
+            let templateArray = getLocalStorage(key);
+            if (!templateArray) {
+                templateArray = [];
+                templateArray.push(parentElem.innerHTML);
+                setLocalStorage(key, templateArray);
+            } else {
+                templateArray.push(parentElem.innerHTML);
+                setLocalStorage(key, templateArray);
+            }
+            console.log(templateArray)
+        })
+    }, 4000)
+}
+
+export async function apiFetch(url){
+    try{
+        const response = await fetch(url);
+        if (response.ok){
+            const data = await response.json();
+            console.log(data);
+            return data;
+        }else{
+            throw Error(await response.text());
+        }
+    }catch (error){
+        console.log(error);
+}}
 
 export function currentDate() {
     let today = new Date();

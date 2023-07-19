@@ -34,7 +34,7 @@ function headerTemplateFunc() {
 }
 
 let headerTemplate = headerTemplateFunc();
-renderWithTemplate(headerTemplate, ".header")
+renderWithTemplate("Header", headerTemplate, ".header")
 
 function toggleMenu() {
     document.getElementById("headerNav").classList.toggle("open");

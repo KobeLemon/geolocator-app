@@ -172,13 +172,30 @@ li {
 }
 
 .titleBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 90%;
-    text-align: center;
+    /* text-align: center; */
     margin-top: 1rem;
+    border-bottom: 1.5px solid #072E74;
 }
 
 .titleBox h2 {
     margin: 3rem auto 2rem auto;
+}
+
+.titleBox button {
+    width: 150px;
+}
+
+.inactive {
+    background-color: gray;
+    color: #acacac;
+}
+
+.saveDataBtn {
+    margin-top: 2rem;
 }
 
 hr {
@@ -257,6 +274,14 @@ legend,
 /* End of Small Home Page Styling */
 
 /* Small Current Location Page Styling */
+.mapLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
 #mapIcon {
     width: 175px;
 }
@@ -300,6 +325,12 @@ legend,
 .savedDataUL a li p {
     color: #FFF8D8;
     margin: 0px;
+}
+
+.savedDataMain {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .savedDataMain .savedDataBox:last-child {
