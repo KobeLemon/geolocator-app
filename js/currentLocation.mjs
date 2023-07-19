@@ -40,7 +40,7 @@ function currentLocTemplateFunc(location, lat, lon, date) {
     </ul>
 
     <a href="http://www.google.com/maps/place/${lat},${lon}" target="_blank" class="mapLink">
-        <img src="../images/map_icon.png" alt="Link to a Map" class="mapIcon">
+        <img src="../images/map_icon.webp" alt="Link to a Map" class="mapIcon">
         <p>Link to a Map ↑</p>
     </a>
 

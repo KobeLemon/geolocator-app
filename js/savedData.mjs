@@ -19,9 +19,7 @@ function renderSavedDataBox(parent, key, noData) {
 }
 
 let currentLocNoData = `<p class="noData">No Current Location Data Saved!</p>`
-let realTimeNoData = `<p class="noData">No Real Time Data Saved!</p>`
 let weatherNoData = `<p class="noData">No Weather Data Saved!</p>`
 
 renderSavedDataBox("savedCurrentLocUL", "currentLocation", currentLocNoData);
-renderSavedDataBox("savedRealTimeUL", "realTime", realTimeNoData);
 renderSavedDataBox("savedWeatherUL", "weather", weatherNoData);

@@ -23,7 +23,6 @@ function headerTemplateFunc(linkPath, imagePath) {
         <ul id="headerNav">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../current_location/index.html">Current Location</a></li>
-            <li><a href="../real_time_location/index.html">Real Time Location</a></li>
             <li><a href="../weather/index.html">Weather</a></li>
             <li><a href="../saved_data/index.html">Saved Data</a></li>
         </ul>
@@ -35,6 +34,7 @@ function headerTemplateFunc(linkPath, imagePath) {
 
 let homeHeaderTemplate = headerTemplateFunc(`./index.html`, `./images/compass_logo.webp`);
 let otherHeaderTemplate = headerTemplateFunc(`../index.html`, `../images/compass_logo.webp`);
+
 if (document.querySelector("#homeHeader")){
     renderWithTemplate("Header", homeHeaderTemplate, "#homeHeader")
 } else {

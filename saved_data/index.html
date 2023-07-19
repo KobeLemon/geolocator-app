@@ -15,30 +15,21 @@
     <header class="header" id="main-header"></header>
 
     <main class="contentMain savedDataMain">
+
         <div class="titleBox">
             <h2>Saved Data</h2>
         </div>
+
         <fieldset class="savedDataBox">
             <legend>Current Location</legend>
             <p>Location data acquired from <a href="https://www.w3.org/TR/geolocation/" class="apiCredit">Geolocation API</a></p>
             <ul class="savedDataUL" id="savedCurrentLocUL"></ul>
         </fieldset>
-        <fieldset class="savedDataBox">
-            <legend>Real Time Location</legend>
-            <p>Location data acquired from <a href="https://www.w3.org/TR/geolocation/" class="apiCredit">Geolocation API</a></p>
-            <ul class="savedDataUL" id="savedRealTimeUL"></ul>
-        </fieldset>
+
         <fieldset class="savedDataBox">
             <legend>Weather</legend>
             <p>Weather data acquired from <a href="https://openweathermap.org/" class="apiCredit">OpenWeather API</a></p>
-            <ul class="savedDataUL" id="savedWeatherUL">
-                <!-- I am leaving this template here in case I add the data_render.html functionality later -->
-                <!-- <a href="data_render.html">
-                    <li>
-                        <p class="savedDate">06/15/2023</p><p>|</p><p class="savedTime">10:35 AM MST</p><p>|</p><p class="savedLocation">Ogden</p>
-                    </li>
-                </a> -->
-            </ul>
+            <ul class="savedDataUL" id="savedWeatherUL"></ul>
         </fieldset>
     </main>
 </body>
