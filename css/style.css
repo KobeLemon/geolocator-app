@@ -56,7 +56,7 @@ ul {
 button:hover,
 .mainPageLI:hover,
 .savedDataUL a:hover,
-#mapIcon:hover,
+.mapIcon:hover,
 .logoBox img:hover {
     transform: scale(1.05);
 }
@@ -72,7 +72,7 @@ button:hover,
 button,
 .mainPageLI,
 .savedDataUL a,
-#mapIcon,
+.mapIcon,
 .logoBox img {
     transition: 0.4s ease;
 }
@@ -160,10 +160,13 @@ li {
     align-items: center;
 }
 
+.contentBox {
+    margin-top: 1rem;
+}
+
 .contentMain {
     display: flex;
     flex-direction: column;
-    /* gap: 2rem; */
     align-items: center;
 }
 
@@ -171,14 +174,55 @@ li {
     margin-top: 0px;
 }
 
+.mapLink p {
+    color: #072E74;
+}
+
+.contentUL .weatherImg {
+    width: 150px;
+}
+
+.savedDataUL li .apiBox {
+    display: none;
+}
+
+.savedDataLI {
+    padding: 0.5rem;
+    border: 1.5px solid #129c40;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+    border-radius: 0.5rem;
+    background-color: #17bc4e;
+}
+
+.savedDataLI *,
+.savedDataLI .mapLink p {
+    color: #f0e9c9;
+}
+
 .titleBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 90%;
-    text-align: center;
     margin-top: 1rem;
+    border-bottom: 1.5px solid #072E74;
 }
 
 .titleBox h2 {
     margin: 3rem auto 2rem auto;
+}
+
+.titleBox button {
+    width: fit-content;
+}
+
+#inactive {
+    background-color: gray;
+    color: #acacac;
+}
+
+.saveDataBtn {
+    margin-top: 2rem;
 }
 
 hr {
@@ -194,10 +238,6 @@ button {
     color: #FFF8D8;
     border: none;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
-}
-
-.saveDataBtn {
-    margin-bottom: 2rem;
 }
 
 li p {
@@ -257,7 +297,15 @@ legend,
 /* End of Small Home Page Styling */
 
 /* Small Current Location Page Styling */
-#mapIcon {
+.mapLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.mapIcon {
     width: 175px;
 }
 
@@ -273,8 +321,11 @@ legend,
 
 /* Start of Small Saved Data Page Styling */
 .savedDataBox {
-    width: 80%;
+    width: 88%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .savedDataUL {
@@ -283,23 +334,14 @@ legend,
     gap: 2rem;
 }
 
-.savedDataUL a {
-    border: 1px solid #128a3a;
-    border-radius: 0.25rem;
-    padding: 0.75rem;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
-    background-color: #17bc4e;
+.savedDataUL .mapLink .mapIcon {
+    max-width: 100px;
 }
 
-.savedDataUL a li {
+.savedDataMain {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.savedDataUL a li p {
-    color: #FFF8D8;
-    margin: 0px;
+    flex-direction: column;
+    gap: 2rem;
 }
 
 .savedDataMain .savedDataBox:last-child {
@@ -341,8 +383,6 @@ legend,
     #headerNav li {
         display: flex;
         align-items: center;
-        /* padding: 0.5rem 1rem 1rem 0rem;
-        border-right: 1px solid #FFF8D8; */
     }
 /* End of Large General Styling */
 

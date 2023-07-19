@@ -1,19 +1,15 @@
-import { renderWithTemplate, currentDate, getCityInfo } from "./utils.mjs"
+import * as utilsModule from "./utils.mjs"
 
 async function successCallback(position) {
     console.log(position)
     const { latitude, longitude } = position.coords;
     console.log(`latitude: ${latitude}`);
     console.log(`longitude: ${longitude}`);
-    // These are used if I need to look for a hard coded location, rather than my current location.
-    // latitude = "61.53805438734129";
-    // longitude = "82.39069917161981";
-    let locationRequest = await getCityInfo(latitude, longitude);
-    console.log(locationRequest);
-    let cityCountryInfo = `${locationRequest[0].City}, ${locationRequest[0].Country}`;
-    console.log(cityCountryInfo);
-    let currentLocTemplate = currentLocTemplateFunc(latitude, longitude, cityCountryInfo, currentDate());
-    renderWithTemplate(currentLocTemplate, ".contentBox");
+    let url = `https://api.openweathermap.org/data/2.5/forecast?units=imperial&lat=${latitude}&lon=${longitude}&appid=659d1abc1a1e9d987421cfc8b88e65fc`;
+    let weatherData = await utilsModule.apiFetch(url);
+    let location = `${weatherData.city.name}, ${weatherData.city.country}`;
+    let currentLocTemplate = currentLocTemplateFunc(location, latitude, longitude, utilsModule.currentDate());
+    utilsModule.renderWithTemplate("currentLocation", currentLocTemplate, ".contentBox");
 }
 
 function errorCallBack(error) {
@@ -29,24 +25,26 @@ const findinfoBtn = document.getElementById("findInfoBtn");
 findinfoBtn.addEventListener("click", () => {
     console.log(`Entered currentLocation findinfoBtn.addEventListener`);
     navigator.geolocation.getCurrentPosition(successCallback, errorCallBack);
+    document.querySelector(".saveDataBtn").innerText = `Save This Data`
+    utilsModule.saveTemplate(".contentBox", "currentLocation");
     console.log(`Finished currentLocation findinfoBtn.addEventListener`);
 })
 
-function currentLocTemplateFunc(latitude, longitude, cityCountry, date) {
+function currentLocTemplateFunc(location, lat, lon, date) {
     const currentLocTemplateElement = 
     `<ul class="contentUL">
-        <li class="contentLI"><strong>Latitude:</strong> <span id="staticLatitude">${latitude.toFixed(5)}</span></li>
-        <li class="contentLI"><strong>Longitude:</strong> <span id="staticLongitude">${longitude.toFixed(5)}</span></li>
-        <li class="contentLI" id="staticLocation">${cityCountry}</li>
-        <li class="contentLI" id="staticTime">${date}</li>
+        <li><strong>Latitude:</strong> <span>${lat.toFixed(5)}</span></li>
+        <li><strong>Longitude:</strong> <span>${lon.toFixed(5)}</span></li>
+        <li>${location}</li>
+        <li>${date}</li>
     </ul>
 
-    <a href="http://www.google.com/maps/place/${latitude},${longitude}" target="_blank">
-        <img src="../images/map_icon.png" alt="Link to a Map | FILLER ALT" id="mapIcon">
+    <a href="http://www.google.com/maps/place/${lat},${lon}" target="_blank" class="mapLink">
+        <img src="../images/map_icon.png" alt="Link to a Map" class="mapIcon">
+        <p>Link to a Map ↑</p>
     </a>
 
-    <button class="saveDataBtn">Save This Data</button>
-    <p>Location data acquired from <a href="https://www.w3.org/TR/geolocation/" class="apiCredit">Geolocation API</a></p>`
+    <p class="apiBox">Location data acquired from <a href="https://www.w3.org/TR/geolocation/" class="apiCredit">Geolocation API</a></p>`
     
     return currentLocTemplateElement
 }

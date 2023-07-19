@@ -8,7 +8,8 @@
     <title>Where Am I? | Saved Data</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/normalize.css">
-    <script src="../js/main.js" type="module"></script>
+    <script type="module" src="../js/main.js"></script>
+    <script type="module" src="../js/savedData.mjs"></script>
 </head>
 <body>
     <header class="header" id="main-header"></header>
@@ -16,72 +17,27 @@
     <main class="contentMain savedDataMain">
         <div class="titleBox">
             <h2>Saved Data</h2>
-            <hr>
         </div>
         <fieldset class="savedDataBox">
             <legend>Current Location</legend>
-            <ul class="savedDataUL">
-                <p class="noData">No Current Location Data Saved!</p>
-                <!-- <button id="showMore">Show More</button> -->
-            </ul>
+            <p>Location data acquired from <a href="https://www.w3.org/TR/geolocation/" class="apiCredit">Geolocation API</a></p>
+            <ul class="savedDataUL" id="savedCurrentLocUL"></ul>
         </fieldset>
         <fieldset class="savedDataBox">
             <legend>Real Time Location</legend>
-            <ul class="savedDataUL">
-                <p class="noData">No Real Time Location Data Saved!</p>
-                <!-- <button id="showMore">Show More</button> -->
-            </ul>
+            <p>Location data acquired from <a href="https://www.w3.org/TR/geolocation/" class="apiCredit">Geolocation API</a></p>
+            <ul class="savedDataUL" id="savedRealTimeUL"></ul>
         </fieldset>
         <fieldset class="savedDataBox">
             <legend>Weather</legend>
-            <ul class="savedDataUL">
-                <a href="data_render.html">
+            <p>Weather data acquired from <a href="https://openweathermap.org/" class="apiCredit">OpenWeather API</a></p>
+            <ul class="savedDataUL" id="savedWeatherUL">
+                <!-- I am leaving this template here in case I add the data_render.html functionality later -->
+                <!-- <a href="data_render.html">
                     <li>
                         <p class="savedDate">06/15/2023</p><p>|</p><p class="savedTime">10:35 AM MST</p><p>|</p><p class="savedLocation">Ogden</p>
                     </li>
-                </a>
-                <a href="data_render.html">
-                    <li>
-                        <p class="savedDate">06/15/2023</p><p>|</p><p class="savedTime">10:35 AM MST</p><p>|</p><p class="savedLocation">Ogden</p>
-                    </li>
-                </a>
-                <a href="data_render.html">
-                    <li>
-                        <p class="savedDate">06/15/2023</p><p>|</p><p class="savedTime">10:35 AM MST</p><p>|</p><p class="savedLocation">Salt Lake City</p>
-                    </li>
-                </a>
-                <a href="data_render.html">
-                    <li>
-                        <p class="savedDate">06/15/2023</p><p>|</p><p class="savedTime">10:35 AM MST</p><p>|</p><p class="savedLocation">Ogden</p>
-                    </li>
-                </a>
-                <a href="data_render.html">
-                    <li>
-                        <p class="savedDate">06/15/2023</p><p>|</p><p class="savedTime">10:35 AM MST</p><p>|</p><p class="savedLocation">Ogden</p>
-                    </li>
-                </a>
-                <a href="data_render.html">
-                    <li>
-                        <p class="savedDate">06/15/2023</p><p>|</p><p class="savedTime">10:35 AM MST</p><p>|</p><p class="savedLocation">Salt Lake City</p>
-                    </li>
-                </a>
-                <a href="data_render.html">
-                    <li>
-                        <p class="savedDate">06/15/2023</p><p>|</p><p class="savedTime">10:35 AM MST</p><p>|</p><p class="savedLocation">Ogden</p>
-                    </li>
-                </a>
-                <a href="data_render.html">
-                    <li>
-                        <p class="savedDate">06/15/2023</p><p>|</p><p class="savedTime">10:35 AM MST</p><p>|</p><p class="savedLocation">Ogden</p>
-                    </li>
-                </a>
-                <a href="data_render.html">
-                    <li>
-                        <p class="savedDate">06/15/2023</p><p>|</p><p class="savedTime">10:35 AM MST</p><p>|</p><p class="savedLocation">Salt Lake City</p>
-                    </li>
-                </a>
-                <!-- <li class="noData">No Weather Data Saved!</li> -->
-                <!-- <button id="showMore">Show More</button> -->
+                </a> -->
             </ul>
         </fieldset>
     </main>

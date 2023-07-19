@@ -1,31 +1,27 @@
-// import {currentLocTemplateFunc} from "./currentLocation.mjs"
-// import {realTimeTemplateFunc} from "./realTimeLocation.mjs"
-// import {weatherTemplateFunc} from "./weather.mjs"
+import { getLocalStorage, renderWithTemplate } from "./utils.mjs";
 
-// let currentLocTemplate = currentLocTemplateFunc();
-// let realTimeTemplate = realTimeTemplateFunc();
-// let weatherTemplate = weatherTemplateFunc();
+function renderSavedDataBox(parent, key, noData) {
+    let dataBox = getLocalStorage(key);
+    console.log(dataBox);
+    let parentElem = document.getElementById(parent);
+    console.log(parentElem.innerHTML);
+    // console.log(noData);
+    if (!dataBox) {
+        parentElem.innerHTML = noData;
+        return
+    }
+    dataBox.forEach((item) => {
+        let li = document.createElement("li");
+        li.classList.add("savedDataLI")
+        li.innerHTML = item;
+        parentElem.append(li);
+    })
+}
 
-// import { renderFoundData } from "./utils.mjs"
+let currentLocNoData = `<p class="noData">No Current Location Data Saved!</p>`
+let realTimeNoData = `<p class="noData">No Real Time Data Saved!</p>`
+let weatherNoData = `<p class="noData">No Weather Data Saved!</p>`
 
-// function savedDataTemplateFunc() {
-//     const savedDataTemplateElement = 
-//     `<ul class="contentUL">
-//         <li class="contentLI">Latitude: <span id="staticLatitude">FILLER</span></li>
-//         <li class="contentLI">Longitude: <span id="staticLongitude">FILLER</span></li>
-//         <li class="contentLI" id="staticLocation">FILLER LOCATION</li>
-//         <li class="contentLI" id="staticTime">FILLER TIME</li>
-//     </ul>
-
-//     <a href="#">
-//         <img src="../images/map_icon.png" alt="Link to a Map | FILLER ALT" id="mapIcon">
-//     </a>
-
-//     <button class="saveDataBtn">Save This Data</button>
-//     <p>Location data acquired from <a href="https://www.w3.org/TR/geolocation/" class="apiCredit">Geolocation API</a></p>`
-    
-//     return savedDataTemplateElement
-// }
-
-// let savedDataTemplate = savedDataTemplateFunc();
-// renderFoundData(savedDataTemplate, ".contentBox");
+renderSavedDataBox("savedCurrentLocUL", "currentLocation", currentLocNoData);
+renderSavedDataBox("savedRealTimeUL", "realTime", realTimeNoData);
+renderSavedDataBox("savedWeatherUL", "weather", weatherNoData);
