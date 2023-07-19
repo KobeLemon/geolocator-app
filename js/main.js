@@ -33,8 +33,8 @@ function headerTemplateFunc(linkPath, imagePath) {
     return headerTemplateElement;
 }
 
-let homeHeaderTemplate = headerTemplateFunc(`./index.html`, `./images/compass_logo.png`);
-let otherHeaderTemplate = headerTemplateFunc(`../index.html`, `../images/compass_logo.png`);
+let homeHeaderTemplate = headerTemplateFunc(`./index.html`, `./images/compass_logo.webp`);
+let otherHeaderTemplate = headerTemplateFunc(`../index.html`, `../images/compass_logo.webp`);
 if (document.querySelector("#homeHeader")){
     renderWithTemplate("Header", homeHeaderTemplate, "#homeHeader")
 } else {
