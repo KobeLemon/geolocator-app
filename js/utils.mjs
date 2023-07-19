@@ -7,7 +7,10 @@ export function setLocalStorage(key, data) {
 }
 
 export function renderWithTemplate(callLocation, template, parentIDClass, position = "afterbegin") {
-    console.log(`Entered ${callLocation} renderWithTemplate`);
+    console.log(`Entered ${callLocation} renderWithTemplate ${parentIDClass}`);
+    if (!parentIDClass) {
+        console.log(`Wrong ${callLocation} renderWithTemplate Id or Class: ${parentIDClass}`);
+    }
     const parentLocation = document.querySelector(parentIDClass);
     if (parentLocation.innerHTML == "") {
         parentLocation.insertAdjacentHTML(position, template);

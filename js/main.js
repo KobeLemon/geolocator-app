@@ -4,10 +4,10 @@ if (!navigator.geolocation) {
     alert("Geolocation not available. Please try again later, or try again with a different device.")
 }
 
-function headerTemplateFunc() {
+function headerTemplateFunc(linkPath, imagePath) {
     const headerTemplateElement = 
-    `<a href="../index.html" class="logoBox">
-        <img src="../images/compass_logo.png" alt="Compass Logo">
+    `<a href="${linkPath}" class="logoBox">
+        <img src="${imagePath}" alt="Compass Logo">
         <h1>Where Am I? - Geolocator & Weather</h1>
     </a>
 
@@ -33,9 +33,13 @@ function headerTemplateFunc() {
     return headerTemplateElement;
 }
 
-let headerTemplate = headerTemplateFunc();
-renderWithTemplate("Header", headerTemplate, ".header")
-
+let homeHeaderTemplate = headerTemplateFunc(`./index.html`, `./images/compass_logo.png`);
+let otherHeaderTemplate = headerTemplateFunc(`../index.html`, `../images/compass_logo.png`);
+if (document.querySelector("#homeHeader")){
+    renderWithTemplate("Header", homeHeaderTemplate, "#homeHeader")
+} else {
+    renderWithTemplate("Header", otherHeaderTemplate, ".header")
+}
 function toggleMenu() {
     document.getElementById("headerNav").classList.toggle("open");
     document.getElementById("hamburgerBtn").classList.toggle("open");
