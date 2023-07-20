@@ -1,5 +1,7 @@
 import { renderWithTemplate } from "./utils.mjs";
 
+let callLocation = "";
+
 if (!navigator.geolocation) {
     alert("Geolocation not available. Please try again later, or try again with a different device.")
 }
@@ -36,9 +38,9 @@ let homeHeaderTemplate = headerTemplateFunc(`./index.html`, `./images/compass_lo
 let otherHeaderTemplate = headerTemplateFunc(`../index.html`, `../images/compass_logo.webp`);
 
 if (document.querySelector("#homeHeader")){
-    renderWithTemplate("Header", homeHeaderTemplate, "#homeHeader")
+    renderWithTemplate(homeHeaderTemplate, "#homeHeader", callLocation = "Header");
 } else {
-    renderWithTemplate("Header", otherHeaderTemplate, ".header")
+    renderWithTemplate(otherHeaderTemplate, ".header", callLocation = "Header");
 }
 function toggleMenu() {
     document.getElementById("headerNav").classList.toggle("open");

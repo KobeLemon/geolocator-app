@@ -1,10 +1,10 @@
-import { getLocalStorage, renderWithTemplate } from "./utils.mjs";
+import { getLocalStorage } from "./utils.mjs";
 
 function renderSavedDataBox(parent, key, noData) {
     let dataBox = getLocalStorage(key);
-    console.log(dataBox);
+    // console.log(dataBox);
     let parentElem = document.getElementById(parent);
-    console.log(parentElem.innerHTML);
+    // console.log(parentElem.innerHTML);
     // console.log(noData);
     if (!dataBox) {
         parentElem.innerHTML = noData;

@@ -6,25 +6,18 @@ export function setLocalStorage(key, data) {
     localStorage.setItem(key, JSON.stringify(data));
 }
 
-export function renderWithTemplate(callLocation, template, parentIDClass, position = "afterbegin") {
-    console.log(`Entered ${callLocation} renderWithTemplate ${parentIDClass}`);
+// callLocation is the parent element where the template is inserted. Ex. Header, currentLocation, or Weather
+export function renderWithTemplate(template, parentIDClass, callLocation = "No callLocation given", position = "afterbegin") {
+    // console.log(`Entered ${callLocation} renderWithTemplate ${parentIDClass}`);
     if (!parentIDClass) {
-        console.log(`Wrong ${callLocation} renderWithTemplate Id or Class: ${parentIDClass}`);
+        alert(`${callLocation} renderWithTemplate Wrong Id or Class: ${parentIDClass}`);
     }
     const parentLocation = document.querySelector(parentIDClass);
-    if (parentLocation.innerHTML == "") {
-        parentLocation.insertAdjacentHTML(position, template);
-        console.log(`${callLocation} Template rendered`)
-    } else {
-        console.log(`Entered ${callLocation} renderWithTemplate clear parentLocation`);
-        // This else statement runs if parentLocation already has content (e.g. findInfoBtn was already pressed) & it deletes that content, then fills it with new content. This prevents parentLocation from stacking multiple instances of content, whereas we only want one instance at a time.
-        parentLocation.innerHTML = "";
-        console.log(`${callLocation} renderWithTemplate parentLocation cleared`);
-        parentLocation.insertAdjacentHTML(position, template);
-        console.log(`${callLocation} Template rendered`)
-        console.log(`Finished ${callLocation} renderWithTemplate clear parentLocation`);
-    }
-    console.log(`${callLocation} Finished renderWithTemplate`);
+    parentLocation.innerHTML = "";
+    // console.log(`${callLocation} renderWithTemplate parentLocation cleared`);
+    parentLocation.insertAdjacentHTML(position, template);
+    // console.log(`${callLocation} Template rendered`)
+    // console.log(`${callLocation} Finished renderWithTemplate`);
 }
 
 export function saveTemplate(parent, key) {
@@ -32,10 +25,10 @@ export function saveTemplate(parent, key) {
     const parentElem = document.querySelector(parent);
     saveDataBtn.id = "active";
     setTimeout(() => {
-        console.log("saveDataBtn Ready")
+        // console.log("saveDataBtn Ready")
         const saveTemplateVariable = () => {
-            console.log(parentElem.innerHTML);
-            console.log(`key: ${key}`);
+            // console.log(parentElem.innerHTML);
+            // console.log(`key: ${key}`);
             let templateArray = getLocalStorage(key);
             if (!templateArray) {
                 templateArray = [];
@@ -45,13 +38,13 @@ export function saveTemplate(parent, key) {
                 templateArray.push(parentElem.innerHTML);
                 setLocalStorage(key, templateArray);
             }
-            console.log(templateArray)
-            saveDataBtn.innerText = `Data Saved! Press "Find My Location" to get new data`; 
+            // console.log(templateArray)
+            saveDataBtn.innerText = `Data Saved! Press "Find My Data" to get new data`; 
             document.getElementById("active").removeEventListener("click", saveTemplateVariable)
             saveDataBtn.id = "inactive";
         }
         document.getElementById("active").addEventListener("click", saveTemplateVariable)
-    }, 3000)
+    }, 1000)
 }
 
 export async function apiFetch(url){
@@ -59,7 +52,7 @@ export async function apiFetch(url){
         const response = await fetch(url);
         if (response.ok){
             const data = await response.json();
-            console.log(data);
+            // console.log(data);
             return data;
         }else{
             throw Error(await response.text());

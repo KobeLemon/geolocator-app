@@ -182,27 +182,11 @@ li {
     width: 150px;
 }
 
-.savedDataUL li .apiBox {
-    display: none;
-}
-
-.savedDataLI {
-    padding: 1.5rem;
-    border: 1.5px solid #129c40;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
-    border-radius: 0.5rem;
-    background-color: #17bc4e;
-}
-
-.savedDataLI *,
-.savedDataLI .mapLink p {
-    color: #f0e9c9;
-}
-
 .titleBox {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     width: 90%;
     margin-top: 1rem;
     border-bottom: 1.5px solid #072E74;
@@ -347,6 +331,27 @@ legend,
 .savedDataMain .savedDataBox:last-child {
     margin-bottom: 2rem;
 }
+
+#savedWeatherUL li #weatherBox2 {
+    margin-top: 2rem;
+}
+
+.savedDataUL li .apiBox {
+    display: none;
+}
+
+.savedDataLI {
+    padding: 1.5rem;
+    border: 1.5px solid #129c40;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+    border-radius: 0.5rem;
+    background-color: #17bc4e;
+}
+
+.savedDataLI *,
+.savedDataLI .mapLink p {
+    color: #f0e9c9;
+}
 /* End of Small Saved Data Page Styling */
 /* End of Small View Styling */
 
@@ -385,6 +390,11 @@ legend,
         display: flex;
         align-items: center;
     }
+
+    
+    .apiBox {
+        grid-column: 1 / -1;    
+    }
 /* End of Large General Styling */
 
 /* Large Home Page Styling */
@@ -398,7 +408,7 @@ legend,
     }
 
 /* Large Weather Page Styling */
-    #weatherBox2 {
+    #weatherMain #weatherBox2 {
         margin-top: 9rem;
     }
 
