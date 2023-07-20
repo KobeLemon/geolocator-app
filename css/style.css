@@ -8,6 +8,7 @@
 /* Start of Small General Styling -- This is for styling used across multiple pages */
 html {
     background-color: #FFF8D8;
+    font-family: Arial, Verdana, sans-serif
 }
 
 body {
@@ -64,7 +65,9 @@ button:hover,
 
 #headerNav li:hover {
     border-radius: 0.5rem;
-    border: 1px solid #FFF8D8;
+    border: 1px solid #129c40;
+    background-color: #17bc4e;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
     transform: scale(1.05);
 }
 
@@ -206,7 +209,7 @@ li {
 }
 
 .saveDataBtn {
-    margin-top: 2rem;
+    margin: 1rem 2rem;
 }
 
 hr {
@@ -265,7 +268,7 @@ legend,
     gap: 0.5rem;
     text-align: center;
     align-items: center;
-    font-size: 1.4rem;
+    font-size: 1.7rem;
     border-radius: 0.5rem;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
     padding: 0.5rem;
@@ -392,7 +395,8 @@ legend,
     }
 
     
-    .apiBox {
+    .apiBox,
+    #loading {
         grid-column: 1 / -1;    
     }
 /* End of Large General Styling */

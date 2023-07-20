@@ -13,8 +13,10 @@ async function successCallback(position) {
     let data = await utilsModule.apiFetch(url);
     let argArray = getAPIInfo(data);
     let weatherTemplate = weatherTemplateFunc(argArray);
-    utilsModule.renderWithTemplate(weatherTemplate, ".contentBox", callLocation = "Weather");
-    contentBoxElem.scrollIntoView({behavior: "smooth", block: "end", inline: "center"});
+    setTimeout(() => {
+        utilsModule.renderWithTemplate(weatherTemplate, ".contentBox", callLocation = "Weather");
+        contentBoxElem.scrollIntoView({behavior: "smooth", block: "end", inline: "center"});
+    }, 1000);
 }
 
 function errorCallBack(error) {
@@ -29,7 +31,7 @@ function errorCallBack(error) {
 const findinfoBtn = document.getElementById("findInfoBtn");
 findinfoBtn.addEventListener("click", () => {
     // console.log(`Entered Weather findinfoBtn.addEventListener`);
-    contentBoxElem.innerHTML = `<h2 id=loading">Loading...</h2>`
+    contentBoxElem.innerHTML = `<h2 id="loading">Retrieving New Data...</h2>`
     contentBoxElem.scrollIntoView({behavior: "smooth", block: "end", inline: "center"});
     navigator.geolocation.getCurrentPosition(successCallback, errorCallBack);
     document.querySelector(".saveDataBtn").innerText = `Save This Data`
